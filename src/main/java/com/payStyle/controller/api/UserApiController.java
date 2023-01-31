@@ -22,6 +22,7 @@ public class UserApiController {
 		System.out.println("UserApiController 호출됨");
 		userService.회원가입(user);
 		System.out.println("회원가입 실행");
+		System.out.println(user.getEmail());
 		return new ResponseDto<>(HttpStatus.OK.value(), 1);
 	}
 

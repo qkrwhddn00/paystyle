@@ -40,16 +40,16 @@ public class Users {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USER_SEQ_GENERATOR")
 	private int id;
 	
-	@Column(nullable=false, length=30)
+	@Column(nullable=true, length=30)
 	private String userid;		
 	
-	@Column(nullable=false, length=30)
+	@Column(nullable=true, length=30)
 	private String username;
 	
-	@Column(nullable=false, length=100)
+	@Column(nullable=true, length=100)
 	private String password;
 	
-	@Column(nullable=false, length=50)
+	@Column(nullable=true, length=50)
 	private String email;
 	
 	@ColumnDefault("'user'")

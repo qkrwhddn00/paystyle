@@ -106,7 +106,7 @@
                    <h3 class="text-info">무제한/10년</h3>
                    <p class="center-block">$300</p>
                    <ul class="list-unstyled">
-                      <li>자산관리는 거의 평생에 걸쳐 이루어지기 때문에 결제하는 상품입니다.
+                      <li>자산관리는 평생에 걸쳐 이루어지기 때문에 결제하는 상품입니다.
                          결제하면 마음이 갑자기 편해지면서 뜬금없이 자산관리도 같이 느슨해지는 단점이 있습니다.</li>
                    </ul>
                    <a href="#" class="btn btn-info">Order Now</a>

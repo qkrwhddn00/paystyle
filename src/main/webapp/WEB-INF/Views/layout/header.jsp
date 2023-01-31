@@ -2,6 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%
+	Date nowTime = new Date();
+	SimpleDateFormat sf = new SimpleDateFormat("yyyy/MM/dd");
+%>
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="principal" var="principal"/>
 </sec:authorize>
@@ -20,15 +27,15 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="css/header.css" rel="stylesheet">
 <script src="js/header.js"></script> 
 <link href="css/test1.css" rel="stylesheet">
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <nav class="navbar navbar-dark navbar-expand-lg bg-black fixed"><!--1296px-->
   <div class="container">
-    <a class="navbar-brand" href="#"><img src="img/logo(black).png" style="width:90px;height:90%;"></img></a>
+    <a class="navbar-brand" href="/"><img src="img/logo(black).png" style="width:90px;height:90%;"></img></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,7 +46,7 @@
             쓰기
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">지출</a></li>
+            <li><a class="dropdown-item" href="/withdraw">지출</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">수입</a></li>
             <li><hr class="dropdown-divider"></li>
@@ -60,12 +67,14 @@
           <a class="nav-link " aria-current="page" href="#">게시판</a>
         </li>
       </ul>
-      
-      <form class="d-flex" role="login">
-        <input class="form-control me-2" tpye="email" placeholder="이메일주소">
-        <input class="form-control me-2" type="password" placeholder="비밀번호">
+      <c:if test="${empty principal}">
+      <form class="d-flex" role="login" action="/auth/loginProc" method="POST">
+        <input class="form-control me-2" tpye="email" placeholder="이메일주소"  id="userid" name="userid" required>
+        <input class="form-control me-2" type="password" placeholder="비밀번호" id="password" name="password" required>
         <button class="btn btn-outline-success" type="submit" style="margin-right:10px;">login</button>
       </form>
+      
+      
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -81,7 +90,11 @@
             <li><a class="dropdown-item" href="#">비밀번호 찾기</a></li>
           </ul>
         </li>
-        </ul>
+       </ul>
+       </c:if>
+       <c:if test="${!empty principal}">
+      <a class="navbar-nav" href="/logout" style="text-decoration:none;color:rgba(255,255,255,0.55)">로그아웃</a>
+	  </c:if>
     </div>
   </div>
 </nav>
