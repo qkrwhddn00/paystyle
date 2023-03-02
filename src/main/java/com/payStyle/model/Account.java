@@ -1,5 +1,7 @@
 package com.payStyle.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,8 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-import com.sun.istack.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -41,12 +41,14 @@ public class Account {
 	
 
 	@Column(nullable=false, length=30)
-	private String bankName;
+	private String payMethod;
 	
 
-	@Column(nullable=false, length=30)
+	@Column(length=30)
 	private int accountNum;
 	
 	@Column
 	private int balance;
+	@Column
+	private Date inputdate;
 }

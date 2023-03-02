@@ -40,6 +40,8 @@ public class Users {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USER_SEQ_GENERATOR")
 	private int id;
 	
+	private String oauth;
+	
 	@Column(nullable=true, length=30)
 	private String userid;		
 	

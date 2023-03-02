@@ -1,0 +1,180 @@
+#container {
+    
+    width: 1000px;
+    margin : auto;
+    
+    display: flex;
+    margin-bottom: 350px;
+    
+}
+
+#container #board_wrap {
+    width : 100%;
+    
+    margin-top: 150px;    
+    
+}
+#board_wrap {
+	background-color: white;
+	padding:5px;
+}
+#board_wrap .board_wrap_title{
+	font-size : 35px;
+	margin-bottom : 20px;
+	font-family : '굴림';
+	font-weight : bold;
+	border-bottom : 1px solid;
+	line-height : 50px;
+	
+	
+}
+
+#board_wrap .board_title {
+    width : 100%;
+    height: 50px;
+    font-size: 25px;
+    line-height: 50px;
+    border-bottom: 1px solid;
+    border-top: 1px solid gray;
+    font-weight:400;
+    
+  
+}
+#board_wrap .board_subtitle {
+    width : 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid;
+    
+}
+.board_subtitle_etc {
+    display: flex;
+}
+.board_subtitle_etc div {
+    width : 100px;
+    margin-left: 10px;
+   
+}
+.board_subtitle_etc div:nth-child(3) {
+    width : 160px;
+}
+
+.board_content_wrap {
+	border-bottom : 1px solid;
+	margin-bottom : 10px;
+	
+}
+.board_content_wrap .board_content {
+    width : 97%;        
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom : 150px;
+    font-size : 15px;
+    line-height : 25px;
+    
+}
+  
+#board_button {
+	display: flex;
+	justify-content: right;
+}
+#board_button button{
+
+	height: 40px;	    	 
+    width : 70px;    
+    font-size : 15px;
+    font-weight: bold;
+    background-color: rgb(68, 68, 68);
+    color : white;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left : 10px;
+}
+#board_button button:hover {
+	cursor : pointer;
+}
+
+#reply_title {
+	font-size : 20px;
+	height : 40px;
+	border-bottom : 1px solid;
+	margin-bottom : 10px;
+	font-weight : bold;
+	line-height : 30px;
+}
+
+#reply_box {
+    display: flex;
+    border-bottom: 1px solid;    
+   
+}
+
+#reply_box #reply_body {
+	
+	
+    margin-top: 10px;
+    margin-bottom: 10px;
+        
+}
+
+.reply_box {
+	margin-bottom : 10px;
+	border : 1px solid gray;
+	font-weight: lighter;
+	font-size : 14px;
+	
+}
+.reply_box .reply_body {
+	
+	justify-content: space-between;
+	margin-bottom : 10px;
+	align-items: center;
+	}
+	
+	#reply_info {	
+	display : flex;	
+	font-size : 12px;
+	font-weight: lighter;
+	align-items: center;
+
+	height : 25px;
+	}
+	#reply_info h4 {
+	margin-right : 10px;
+	}
+	#reply_content {
+		margin-top : 10px;
+	}
+	.reply_box button {
+		border : none;		
+	}
+	.reply_box button:hover {
+		cursor : pointer;
+	}
+	
+	.reply-content {
+	margin-left: 10%;
+	align-items:middle;
+	}
+#reply_box button {
+    height: 35px;	    	 
+    width : 60px;    
+    font-size : 13px;
+    font-weight: bold;
+    background-color: gray(68, 68, 68);
+    color : black;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left : 20px;
+    
+}
+#reply_box button:hover {
+    cursor: pointer;
+}
+
+
+
+
+

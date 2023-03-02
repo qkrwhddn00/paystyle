@@ -1,6 +1,7 @@
 package com.payStyle.model;
 
-import java.time.LocalDate;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,14 +11,17 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-import org.springframework.data.annotation.CreatedDate;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Table(name="deposits")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -40,26 +44,19 @@ public class Deposit {//소득
 	private Users users;
 	
 	@Column
-	private String cate;
+	private String payMethod;
 	
 	@Column
-	private int value;
+	private String category;
 	
+	@Column
+	private int profit;
 	
-//	@Column
-//	private int	deposit;//예금
-//	@Column
-//	private int	savings;//적금
-//	@Column
-//	private int	fund;//펀드
-//	@Column
-//	private int	insurance;//보험
-//	@Column
-//	private int	invest;//투자
-	
+	@Column
+	private Date inputdate;
 
-
-	@CreatedDate
-	private LocalDate createDate;
+	@DateTimeFormat(pattern="yyyy/MM/dd")
+	@CreationTimestamp
+	private Timestamp createDate;
 
 }

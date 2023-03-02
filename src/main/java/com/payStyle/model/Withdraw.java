@@ -1,5 +1,6 @@
 package com.payStyle.model;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -13,6 +14,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -43,16 +45,17 @@ public class Withdraw {//지출
 	private Users users;
 	
 	@Column
-	private String bankName;
+	private String payMethod;
 	
 	@Column
-	private String cate;
+	private String category;
 	
 	@Column
 	private int value;
 	
-	
-	
+	@Column
+	private Date inputdate;
+	@DateTimeFormat(pattern="yyyy/MM/dd")
 	@CreationTimestamp
 	private Timestamp createDate;
 

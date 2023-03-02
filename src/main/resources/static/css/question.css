@@ -1,0 +1,26 @@
+body {
+	background:#f4f4f4;
+}
+#body {
+	background:#f4f4f4;
+}
+#h1 {
+
+	padding-top:1%;
+	width:50%;
+	margin-left: 45%;
+	margin-bottom:3%;
+}
+.table {
+	padding:3%;
+	background:#fff;
+	border-radius: 5px;
+}
+#write{
+	background:white;
+	border: 1px solid;
+	float: right;
+	color:gray;
+	border-radius:7px;
+	
+}
